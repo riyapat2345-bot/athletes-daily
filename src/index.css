@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(145deg, #f8f5fd 0%, #f0ebfa 30%, #eaf2ff 60%, #f0f9f0 100%);
+  color: #3d2b5a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f3eefb;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8c8ee;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a7e4;
+}
+
+@layer utilities {
+  .glass-pastel {
+    @apply bg-white/60 backdrop-blur-xl border border-white/80 shadow-soft;
+  }
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-pastel-purple/30 shadow-card rounded-2xl;
+  }
+  .gradient-text-pastel {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pastel-purpleDeep to-pastel-blueDeep;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out;
+}
